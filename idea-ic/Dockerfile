@@ -9,7 +9,7 @@
 FROM java:openjdk-7-jdk
 
 # Add IntelliJ IDEA, downloaded from https://www.jetbrains.com/idea/
-ADD ideaIC-14.0.3.tar.gz /tmp/
+ADD ideaIC-14.1.2.tar.gz /tmp/
 
 # Install IntelliJ IDEA and fix paths
 RUN \
