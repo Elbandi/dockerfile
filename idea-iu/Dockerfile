@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java
+FROM java:openjdk-7-jdk
 
 # Add IntelliJ IDEA, downloaded from https://www.jetbrains.com/idea/
 ADD ideaIU-14.0.3.tar.gz /tmp/
@@ -24,6 +24,9 @@ USER nobody
 
 # Define commonly used HOME variable
 ENV HOME /data
+
+# Define working directory.
+WORKDIR /data
 
 # Define default command.
 CMD ["/opt/idea-IU/bin/idea.sh"]

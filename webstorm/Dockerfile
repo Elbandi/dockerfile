@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java
+FROM java:openjdk-7-jre
 
 # Add WebStorm, downloaded from https://www.jetbrains.com/webstorm/
 ADD WebStorm-9.0.3.tar.gz /tmp/
@@ -24,6 +24,9 @@ USER www-data
 
 # Define commonly used HOME variable
 ENV HOME /data
+
+# Define working directory.
+WORKDIR /data
 
 # Define default command.
 CMD ["/opt/webstorm/bin/webstorm.sh"]

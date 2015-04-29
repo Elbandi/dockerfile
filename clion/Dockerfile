@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java
+FROM java:openjdk-7-jre
 
 # Add CLion, downloaded from https://www.jetbrains.com/clion/
 ADD clion-140.2310.6.tar.gz /tmp/
@@ -24,6 +24,9 @@ USER www-data
 
 # Define commonly used HOME variable
 ENV HOME /data
+
+# Define working directory.
+WORKDIR /data
 
 # Define default command.
 CMD ["/opt/clion/bin/clion.sh"]

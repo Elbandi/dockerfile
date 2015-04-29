@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java
+FROM java:openjdk-7-jre
 
 # Add SmartGit, downloaded from http://www.syntevo.com/smartgit/download/
 ADD smartgit-6_5_7.deb /tmp/
@@ -27,6 +27,9 @@ USER www-data
 
 # Define commonly used HOME variable
 ENV HOME /data
+
+# Define working directory.
+WORKDIR /data
 
 # Define default command.
 CMD ["/usr/share/smartgit/bin/smartgit.sh"]
