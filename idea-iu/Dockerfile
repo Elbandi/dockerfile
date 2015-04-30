@@ -15,7 +15,8 @@ ADD ideaIU-14.1.2.tar.gz /tmp/
 RUN \
     usermod -d /data nobody && \
     mv /tmp/idea-IU* /opt/idea-IU && \
-    sed 's%..user.home.%/data%;s%# idea.config.path%idea.config.path%;s%# idea.system.path%idea.system.path%' -i /opt/idea-IU/bin/idea.properties
+    sed -e 's%..user.home.%/data%;s%# idea.config.path%idea.config.path%;s%# idea.system.path%idea.system.path%' \
+        -e '/idea.system.path/a \\nidea.library.source.dir=/data/.IdeaIC/libSources' -i /opt/idea-IU/bin/idea.properties
 
 # My X11 desktop
 ENV DISPLAY 192.168.200.26:51
