@@ -25,6 +25,9 @@ USER www-data
 # Define commonly used HOME variable
 ENV HOME /data
 
+# Define commonly used JAVA_HOME variable
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
 # Define working directory.
 WORKDIR /data
 
