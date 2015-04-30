@@ -13,6 +13,7 @@ ADD ideaIC-14.1.2.tar.gz /tmp/
 
 # Install IntelliJ IDEA and fix paths
 RUN \
+    usermod -d /data nobody && \
     mv /tmp/idea-IC* /opt/idea-IC && \
     sed 's%..user.home.%/data%;s%# idea.config.path%idea.config.path%;s%# idea.system.path%idea.system.path%' -i /opt/idea-IC/bin/idea.properties
 
