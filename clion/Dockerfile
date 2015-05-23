@@ -9,7 +9,7 @@
 FROM java:openjdk-7-jre
 
 # Add CLion, downloaded from https://www.jetbrains.com/clion/
-ADD clion-140.2310.6.tar.gz /tmp/
+ADD clion-1.0.3.tar.gz /tmp/
 
 # Install clion and fix paths
 RUN \
