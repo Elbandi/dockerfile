@@ -9,7 +9,7 @@
 FROM java:openjdk-7-jre
 
 # Add WebStorm, downloaded from https://www.jetbrains.com/webstorm/
-ADD WebStorm-9.0.3.tar.gz /tmp/
+ADD WebStorm-10.0.3.tar.gz /tmp/
 
 # Install webstorm and fix paths
 RUN \
