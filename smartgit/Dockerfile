@@ -10,16 +10,18 @@ FROM java:openjdk-7-jre
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV SMARTGIT_VERSION 6_5_8
+
 # Add SmartGit, downloaded from http://www.syntevo.com/smartgit/download/
-ADD smartgit-6_5_7.deb /tmp/
+ADD smartgit-${SMARTGIT_VERSION}.deb /tmp/
 
 # Install depends and smartgit
 RUN \
     apt-get update && \
     apt-get install -y git git-gui gitk libgtk2.0-0 libxtst6 libjna-java && \
-    dpkg -i /tmp/smartgit-6_5_7.deb && \
+    dpkg -i /tmp/smartgit-${SMARTGIT_VERSION}.deb && \
     echo "-Dsmartgit.settings=/data/.smartgit/6.5" >/usr/share/smartgit/bin/smartgit.vmoptions && \
-    rm /tmp/smartgit-6_5_7.deb && \
+    rm /tmp/smartgit-${SMARTGIT_VERSION}.deb && \
     rm -rf /var/lib/apt/lists/*
 
 # My X11 desktop
