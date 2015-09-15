@@ -1,5 +1,5 @@
 #
-# OpenJDK Java 7 JRE Dockerfile
+# PhpStorm Dockerfile
 #
 # https://github.com/elbandi/dockerfile
 # https://github.com/elbandi/dockerfile/tree/master/phpstorm
@@ -9,7 +9,7 @@
 FROM java:openjdk-7-jre
 
 # Add PhpStorm, downloaded from https://www.jetbrains.com/phpstorm/
-ADD PhpStorm-8.0.3.tar.gz /tmp/
+ADD PhpStorm-9.0.2.tar.gz /tmp/
 
 # Install phpstorm and fix paths
 RUN \
@@ -26,7 +26,7 @@ USER www-data
 ENV HOME /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define working directory.
 WORKDIR /data

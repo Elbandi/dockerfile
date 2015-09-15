@@ -6,10 +6,10 @@
 #
 
 # Pull base image.
-FROM java:openjdk-7-jre
+FROM java:openjdk-8-jre
 
 # Add WebStorm, downloaded from https://www.jetbrains.com/webstorm/
-ADD WebStorm-10.0.3.tar.gz /tmp/
+ADD WebStorm-10.0.4.tar.gz /tmp/
 
 # Install webstorm and fix paths
 RUN \
@@ -26,7 +26,7 @@ USER www-data
 ENV HOME /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define working directory.
 WORKDIR /data

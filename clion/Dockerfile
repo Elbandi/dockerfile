@@ -6,10 +6,10 @@
 #
 
 # Pull base image.
-FROM java:openjdk-7-jre
+FROM java:openjdk-8-jre
 
 # Add CLion, downloaded from https://www.jetbrains.com/clion/
-ADD clion-1.0.3.tar.gz /tmp/
+ADD clion-1.1.1.tar.gz /tmp/
 
 # Install clion and fix paths
 RUN \
@@ -26,7 +26,7 @@ USER www-data
 ENV HOME /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define working directory.
 WORKDIR /data

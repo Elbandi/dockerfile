@@ -6,10 +6,10 @@
 #
 
 # Pull base image.
-FROM java:openjdk-7-jdk
+FROM java:openjdk-8-jdk
 
 # Add IntelliJ IDEA, downloaded from https://www.jetbrains.com/idea/
-ADD ideaIU-14.1.3.tar.gz /tmp/
+ADD ideaIU-14.1.4.tar.gz /tmp/
 
 # Install IntelliJ IDEA and fix paths
 RUN \
@@ -28,7 +28,7 @@ USER nobody
 ENV HOME /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define working directory.
 WORKDIR /data

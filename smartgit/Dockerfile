@@ -6,11 +6,11 @@
 #
 
 # Pull base image.
-FROM java:openjdk-7-jre
+FROM java:openjdk-8-jre
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV SMARTGIT_VERSION 6_5_8
+ENV SMARTGIT_VERSION 7_0_2
 
 # Add SmartGit, downloaded from http://www.syntevo.com/smartgit/download/
 ADD smartgit-${SMARTGIT_VERSION}.deb /tmp/
@@ -34,7 +34,7 @@ USER www-data
 ENV HOME /data
 
 # Define commonly used JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define working directory.
 WORKDIR /data
