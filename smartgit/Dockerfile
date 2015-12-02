@@ -10,7 +10,7 @@ FROM java:openjdk-8-jre
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV SMARTGIT_VERSION 7_0_3
+ENV SMARTGIT_VERSION 7_0_4
 
 # Add SmartGit, downloaded from http://www.syntevo.com/smartgit/download/
 ADD smartgit-${SMARTGIT_VERSION}.deb /tmp/

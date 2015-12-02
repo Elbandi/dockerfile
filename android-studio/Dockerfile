@@ -8,8 +8,8 @@
 # Pull base image.
 FROM java:openjdk-8-jdk
 
-ENV ANDROID_SDK_FILENAME android-sdk_r24.3.4-linux.tgz
-ENV ANDROID_STUDIO_FILENAME android-studio-ide-141.2288178-linux.zip
+ENV ANDROID_SDK_FILENAME android-sdk_r24.4.1-linux.tgz
+ENV ANDROID_STUDIO_FILENAME android-studio-ide-141.2422023-linux.zip
 ENV ANDROID_API_LEVELS android-15,android-16,android-17,android-18,android-19,android-22
 ENV ANDROID_EXTRA extra-android-support,extra-android-m2repository,extra-google-m2repository
 # Possible more extra packages:

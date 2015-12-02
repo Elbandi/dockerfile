@@ -9,7 +9,7 @@
 FROM java:openjdk-8-jdk
 
 # Add IntelliJ IDEA, downloaded from https://www.jetbrains.com/idea/
-ADD ideaIU-14.1.5.tar.gz /tmp/
+ADD ideaIU-15.0.1.tar.gz /tmp/
 
 # Install IntelliJ IDEA and fix paths
 RUN \
