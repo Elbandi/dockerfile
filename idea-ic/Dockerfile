@@ -9,7 +9,7 @@
 FROM java:openjdk-8-jdk
 
 # Add IntelliJ IDEA, downloaded from https://www.jetbrains.com/idea/
-ADD ideaIC-15.0.1.tar.gz /tmp/
+ADD ideaIC-2016.1.1.tar.gz /tmp/
 
 # Install IntelliJ IDEA and fix paths
 RUN \
