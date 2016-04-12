@@ -9,7 +9,7 @@
 FROM java:openjdk-7-jre
 
 # Add PhpStorm, downloaded from https://www.jetbrains.com/phpstorm/
-ADD PhpStorm-10.0.1.tar.gz /tmp/
+ADD PhpStorm-2016.1.tar.gz /tmp/
 
 # Install phpstorm and fix paths
 RUN \
