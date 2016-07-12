@@ -9,7 +9,7 @@
 FROM java:openjdk-8-jdk
 
 ENV ANDROID_SDK_FILENAME android-sdk_r24.4.1-linux.tgz
-ENV ANDROID_STUDIO_FILENAME android-studio-ide-141.2422023-linux.zip
+ENV ANDROID_STUDIO_FILENAME android-studio-ide-143.2915827-linux.zip
 ENV ANDROID_API_LEVELS android-15,android-16,android-17,android-18,android-19,android-22
 ENV ANDROID_EXTRA extra-android-support,extra-android-m2repository,extra-google-m2repository
 # Possible more extra packages:
@@ -18,7 +18,7 @@ ENV ANDROID_EXTRA extra-android-support,extra-android-m2repository,extra-google-
 # - extra-google-play_billing
 # - extra-google-play_licensing
 # - extra-google-webdriver
-ENV ANDROID_BUILD_TOOLS_VERSION 23.0.1
+ENV ANDROID_BUILD_TOOLS_VERSION 23.0.3
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_HOME /data/.AndroidStudio1.4
 ENV GRADLE_USER_HOME /data/.AndroidStudio1.4/.gradle
@@ -27,7 +27,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 # Add Android Studio, downloaded from http://developer.android.com/sdk/index.html
 ADD ${ANDROID_STUDIO_FILENAME} /tmp/
 # Add Android SDK, downloaded from http://developer.android.com/sdk/index.html
-ADD ${ANDROID_SDK_FILENAME} /tmp/
+ADD ${ANDROID_SDK_FILENAME} /opt/
 
 # Installs i386 architecture required for running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
@@ -38,9 +38,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get clean
 
 # Installs Android SDK
-RUN cd /opt && \
-    mv /tmp/android-sdk-linux* ${ANDROID_HOME} && \
-    echo y | android update sdk --no-ui -a --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},${ANDROID_EXTRA}
+RUN echo y | android update sdk --no-ui -a --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},${ANDROID_EXTRA}
 
 # Install Android Studio and fix paths
 RUN \
@@ -48,7 +46,8 @@ RUN \
     unzip -q /tmp/android-studio*.zip -d /opt && \
     rm /tmp/android-studio*.zip && \
     sed -e 's%..user.home.%/data%;s%# idea.config.path%idea.config.path%;s%# idea.system.path%idea.system.path%' \
-        -e '/idea.system.path/a \\nidea.library.source.dir=/data/.AndroidStudio1.4/libSources' -i /opt/android-studio/bin/idea.properties
+        -e 's%.AndroidStudio.0%.AndroidStudio2.0%' \
+        -e '/idea.system.path/a \\nidea.library.source.dir=/data/.AndroidStudio2.0/libSources' -i /opt/android-studio/bin/idea.properties
 
 # My X11 desktop
 ENV DISPLAY 192.168.200.26:51
