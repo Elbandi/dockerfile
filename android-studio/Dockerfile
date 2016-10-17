@@ -9,7 +9,7 @@
 FROM java:openjdk-8-jdk
 
 ENV ANDROID_SDK_FILENAME android-sdk_r24.4.1-linux.tgz
-ENV ANDROID_STUDIO_FILENAME android-studio-ide-143.2915827-linux.zip
+ENV ANDROID_STUDIO_FILENAME android-studio-ide-145.3330264-linux.zip
 ENV ANDROID_API_LEVELS android-15,android-16,android-17,android-18,android-19,android-22
 ENV ANDROID_EXTRA extra-android-support,extra-android-m2repository,extra-google-m2repository
 # Possible more extra packages:
@@ -18,10 +18,10 @@ ENV ANDROID_EXTRA extra-android-support,extra-android-m2repository,extra-google-
 # - extra-google-play_billing
 # - extra-google-play_licensing
 # - extra-google-webdriver
-ENV ANDROID_BUILD_TOOLS_VERSION 23.0.3
+ENV ANDROID_BUILD_TOOLS_VERSION 24.0.3
 ENV ANDROID_HOME /opt/android-sdk-linux
-ENV ANDROID_SDK_HOME /data/.AndroidStudio1.4
-ENV GRADLE_USER_HOME /data/.AndroidStudio1.4/.gradle
+ENV ANDROID_SDK_HOME /data/.AndroidStudio2.0
+ENV GRADLE_USER_HOME /data/.AndroidStudio2.0/.gradle
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Add Android Studio, downloaded from http://developer.android.com/sdk/index.html
