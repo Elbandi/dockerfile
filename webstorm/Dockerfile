@@ -9,7 +9,7 @@
 FROM java:openjdk-8-jre
 
 # Add WebStorm, downloaded from https://www.jetbrains.com/webstorm/
-ADD WebStorm-2016.2.3.tar.gz /tmp/
+ADD WebStorm-2021.3.tar.gz /tmp/
 
 # Install webstorm and fix paths
 RUN \
